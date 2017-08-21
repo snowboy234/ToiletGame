@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  ToiletGame
+//
+//  Created by 田伟 on 2017/8/21.
+//  Copyright © 2017年 田伟. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Define.h"
+#import "UIView+TWFrame.h"
+
+#endif /* PrefixHeader_pch */

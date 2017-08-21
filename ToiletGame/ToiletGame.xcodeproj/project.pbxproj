@@ -11,6 +11,12 @@
 		FF41D4321F4A748900AC386B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D4311F4A748900AC386B /* AppDelegate.m */; };
 		FF41D43A1F4A748900AC386B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF41D4391F4A748900AC386B /* Assets.xcassets */; };
 		FF41D43D1F4A748900AC386B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF41D43B1F4A748900AC386B /* LaunchScreen.storyboard */; };
+		FF41D44A1F4A75B100AC386B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D4491F4A75B100AC386B /* HomeViewController.m */; };
+		FF41D4521F4A763A00AC386B /* UIView+TWFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D44F1F4A763A00AC386B /* UIView+TWFrame.m */; };
+		FF41D4581F4AA7AF00AC386B /* 2203.TTF in Resources */ = {isa = PBXBuildFile; fileRef = FF41D4571F4AA7AF00AC386B /* 2203.TTF */; };
+		FF41D45A1F4AAC1400AC386B /* 22203.TTF in Resources */ = {isa = PBXBuildFile; fileRef = FF41D4591F4AAC1400AC386B /* 22203.TTF */; };
+		FF41D45D1F4ABDA200AC386B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D45C1F4ABDA200AC386B /* GameViewController.m */; };
+		FF41D4601F4ACE5100AC386B /* HomeToGameAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D45F1F4ACE5100AC386B /* HomeToGameAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,18 @@
 		FF41D4391F4A748900AC386B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF41D43C1F4A748900AC386B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF41D43E1F4A748900AC386B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF41D4481F4A75B100AC386B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		FF41D4491F4A75B100AC386B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FF41D44C1F4A761C00AC386B /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		FF41D44E1F4A763A00AC386B /* UIView+TWFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TWFrame.h"; sourceTree = "<group>"; };
+		FF41D44F1F4A763A00AC386B /* UIView+TWFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TWFrame.m"; sourceTree = "<group>"; };
+		FF41D4541F4A765F00AC386B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FF41D4571F4AA7AF00AC386B /* 2203.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2203.TTF; sourceTree = "<group>"; };
+		FF41D4591F4AAC1400AC386B /* 22203.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 22203.TTF; sourceTree = "<group>"; };
+		FF41D45B1F4ABDA200AC386B /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		FF41D45C1F4ABDA200AC386B /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		FF41D45E1F4ACE5100AC386B /* HomeToGameAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeToGameAnimation.h; sourceTree = "<group>"; };
+		FF41D45F1F4ACE5100AC386B /* HomeToGameAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeToGameAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +71,7 @@
 		FF41D42C1F4A748900AC386B /* ToiletGame */ = {
 			isa = PBXGroup;
 			children = (
+				FF41D4451F4A759500AC386B /* Classes */,
 				FF41D4301F4A748900AC386B /* AppDelegate.h */,
 				FF41D4311F4A748900AC386B /* AppDelegate.m */,
 				FF41D4391F4A748900AC386B /* Assets.xcassets */,
@@ -69,6 +88,57 @@
 				FF41D42E1F4A748900AC386B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF41D4451F4A759500AC386B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FF41D44D1F4A763A00AC386B /* Catagroy */,
+				FF41D44B1F4A75FD00AC386B /* Other */,
+				FF41D4461F4A759500AC386B /* Main */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FF41D4461F4A759500AC386B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FF41D4471F4A759500AC386B /* VierController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FF41D4471F4A759500AC386B /* VierController */ = {
+			isa = PBXGroup;
+			children = (
+				FF41D4481F4A75B100AC386B /* HomeViewController.h */,
+				FF41D4491F4A75B100AC386B /* HomeViewController.m */,
+				FF41D45B1F4ABDA200AC386B /* GameViewController.h */,
+				FF41D45C1F4ABDA200AC386B /* GameViewController.m */,
+				FF41D45E1F4ACE5100AC386B /* HomeToGameAnimation.h */,
+				FF41D45F1F4ACE5100AC386B /* HomeToGameAnimation.m */,
+			);
+			path = VierController;
+			sourceTree = "<group>";
+		};
+		FF41D44B1F4A75FD00AC386B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				FF41D4591F4AAC1400AC386B /* 22203.TTF */,
+				FF41D4571F4AA7AF00AC386B /* 2203.TTF */,
+				FF41D44C1F4A761C00AC386B /* Define.h */,
+				FF41D4541F4A765F00AC386B /* PrefixHeader.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		FF41D44D1F4A763A00AC386B /* Catagroy */ = {
+			isa = PBXGroup;
+			children = (
+				FF41D44E1F4A763A00AC386B /* UIView+TWFrame.h */,
+				FF41D44F1F4A763A00AC386B /* UIView+TWFrame.m */,
+			);
+			path = Catagroy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +202,8 @@
 			files = (
 				FF41D43D1F4A748900AC386B /* LaunchScreen.storyboard in Resources */,
 				FF41D43A1F4A748900AC386B /* Assets.xcassets in Resources */,
+				FF41D45A1F4AAC1400AC386B /* 22203.TTF in Resources */,
+				FF41D4581F4AA7AF00AC386B /* 2203.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +214,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF41D45D1F4ABDA200AC386B /* GameViewController.m in Sources */,
 				FF41D4321F4A748900AC386B /* AppDelegate.m in Sources */,
+				FF41D4601F4ACE5100AC386B /* HomeToGameAnimation.m in Sources */,
+				FF41D4521F4A763A00AC386B /* UIView+TWFrame.m in Sources */,
 				FF41D42F1F4A748900AC386B /* main.m in Sources */,
+				FF41D44A1F4A75B100AC386B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7F3QQKKLR9;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ToiletGame/Classes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = ToiletGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shmx.ToiletGame;
@@ -268,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7F3QQKKLR9;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ToiletGame/Classes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = ToiletGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shmx.ToiletGame;
