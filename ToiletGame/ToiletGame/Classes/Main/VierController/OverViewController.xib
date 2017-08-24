@@ -5,13 +5,16 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OverViewController">
             <connections>
+                <outlet property="maxScroeLabel" destination="Hxz-MZ-4Wx" id="goV-Lb-ggu"/>
+                <outlet property="middleView" destination="0jv-16-9Rx" id="YRB-j5-CAH"/>
+                <outlet property="scoreLabel" destination="WCq-le-Pgr" id="HOM-s9-mot"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,19 +25,57 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-16-9Rx">
                     <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高得分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxz-MZ-4Wx">
+                            <rect key="frame" x="153" y="50" width="69.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0jv-16-9Rx" secondAttribute="height" multiplier="15:15" id="1Tl-rt-UjP"/>
+                        <constraint firstItem="Hxz-MZ-4Wx" firstAttribute="top" secondItem="0jv-16-9Rx" secondAttribute="top" constant="50" id="AGW-z9-Pli"/>
+                        <constraint firstItem="Hxz-MZ-4Wx" firstAttribute="centerX" secondItem="0jv-16-9Rx" secondAttribute="centerX" id="mwz-5w-Eyx"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCq-le-Pgr">
+                    <rect key="frame" x="163" y="110" width="49" height="95.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                    <color key="textColor" red="0.28001882659999999" green="0.45344304349999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2g-uo-1Q1">
+                    <rect key="frame" x="83" y="480" width="208" height="81"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="V2g-uo-1Q1" secondAttribute="height" multiplier="208:81" id="wtS-Ed-5AN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="Again" backgroundImage="restart">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="restartButtonClick:" destination="-1" eventType="touchUpInside" id="cBS-3P-bwA"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="WCq-le-Pgr" firstAttribute="top" secondItem="0jv-16-9Rx" secondAttribute="top" constant="-36" id="5Ij-Dn-8j9"/>
                 <constraint firstItem="0jv-16-9Rx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Bcb-LY-BRm"/>
+                <constraint firstItem="V2g-uo-1Q1" firstAttribute="bottom" secondItem="0jv-16-9Rx" secondAttribute="bottom" constant="40" id="TYU-FU-NLu"/>
                 <constraint firstItem="0jv-16-9Rx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Uh8-JJ-IPg"/>
+                <constraint firstItem="V2g-uo-1Q1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ghA-qI-4yf"/>
+                <constraint firstItem="WCq-le-Pgr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="grN-mn-pug"/>
                 <constraint firstItem="0jv-16-9Rx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hIV-UI-1Rw"/>
                 <constraint firstAttribute="trailing" secondItem="0jv-16-9Rx" secondAttribute="trailing" id="jr8-a7-uXZ"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="restart" width="208" height="81"/>
+    </resources>
 </document>

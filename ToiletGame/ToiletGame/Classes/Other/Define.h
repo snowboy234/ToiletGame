@@ -32,5 +32,6 @@
 #define TWLogFunc
 #endif
 
+#define InCount @"InCount"      // 最高纪录值
 
 #endif /* Define_h */

@@ -42,7 +42,8 @@
 @property (nonatomic, assign) NSInteger inCount;
 @property (nonatomic, strong) ManToukanImageView * manToukan;
 @property (nonatomic, strong) WomanToukanImageView * womanToukan;
-@property (nonatomic, strong) OverViewController * overVc;
+//@property (nonatomic, strong) OverViewController * overVc;
+@property (nonatomic, strong) UIView * cover;
 @end
 
 @implementation GameViewController
@@ -64,6 +65,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    TWLog(@"%@",NSHomeDirectory());
     [self initObject];
     [self setupPerson];
     [self chooesFourPerson];
@@ -92,7 +94,8 @@
     CGFloat womanToukanX = (TWScreenWidth - womanToukanWeight) * 0.5;
     CGFloat womanToukanY = TWScreenHeight * (1 - 0.17) - womanToukanHeight;
     _womanToukan = [[WomanToukanImageView alloc]initWithFrame:CGRectMake(womanToukanX, womanToukanY, womanToukanWeight, womanToukanHeight)];
-    _overVc  = [[OverViewController alloc]init];
+//    _overVc  = [[OverViewController alloc]init];
+    _cover = [[UIView alloc]initWithFrame:self.view.bounds];
 }
 
 // 随机4位
@@ -179,6 +182,7 @@
     PersonView * one = [_showDic objectForKey:@"1"];
     PersonView * zore = [_showDic objectForKey:@"0"];
     
+    [self.view addSubview:_cover];
     [UIView animateWithDuration:MoveTime / 5 animations:^{
         zore.tw_x = -TWScreenWidth * 0.25;
     } completion:^(BOOL finished) {
@@ -186,6 +190,7 @@
         if ([zore.sex isEqualToString: @"Man"]) {
             _inCount ++;
             _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+            [_cover removeFromSuperview];
         } else {
             [self.view addSubview:_womanOut];
             [UIView animateWithDuration:MoveTime / 5 animations:^{
@@ -195,9 +200,36 @@
                 [self.view addSubview:_womanToukan];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [_womanToukan removeFromSuperview];
+                    [_cover removeFromSuperview];
+                    
+//                    // 保存最新数据
+//                    NSInteger max = [[NSUserDefaults standardUserDefaults] integerForKey:InCount];
+//                    if (max == 0) {
+//                        // 第一次直接保存
+//                        [[NSUserDefaults standardUserDefaults] setInteger:_inCount forKey:InCount];
+//                        [[NSUserDefaults standardUserDefaults] synchronize];
+////                        [_overVc showWinImageView];
+//                    } else {
+//                        if (max <= _inCount) {
+////                            // 比已经保存的值大就覆盖保存
+////                            [[NSUserDefaults standardUserDefaults] setInteger:_inCount forKey:InCount];
+////                            [[NSUserDefaults standardUserDefaults] synchronize];
+////                            [_overVc showWinImageView];
+//                        } else {
+//                            // 否则就不保存
+////                            [_overVc showLoseImageView];
+//                        }
+//                    }
+                    
                     // 跳转到over页面
-                    self.modalPresentationStyle = UIModalPresentationCustom;
-                    [self presentViewController:_overVc animated:NO completion:nil];
+                    OverViewController * overVc  = [[OverViewController alloc]init];
+                    overVc.score = _inCount;
+                    overVc.block = ^{
+                        _inCount = 0;
+                        _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+                    };
+                    overVc.modalPresentationStyle = UIModalPresentationCustom;
+                    [self presentViewController:overVc animated:NO completion:nil];
                 });
             }];
         }
@@ -238,14 +270,15 @@
     PersonView * one = [_showDic objectForKey:@"1"];
     PersonView * zore = [_showDic objectForKey:@"0"];
     
+    [self.view addSubview:_cover];
     [UIView animateWithDuration:MoveTime / 5 animations:^{
         zore.tw_x = TWScreenWidth * 0.25;
     } completion:^(BOOL finished) {
-        
         [_womanDoorImageView beginAnimation];
         if ([zore.sex isEqualToString: @"Woman"]) {
             _inCount ++;
             _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+            [_cover removeFromSuperview];
         } else {
             [self.view addSubview:_manOut];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -257,9 +290,36 @@
                     [self.view addSubview:_manToukan];
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [_manToukan removeFromSuperview];
+                        [_cover removeFromSuperview];
+                        
+//                        // 保存最新数据
+//                        NSInteger max = [[NSUserDefaults standardUserDefaults] integerForKey:InCount];
+//                        if (max == 0) {
+//                            // 第一次直接保存
+//                            [[NSUserDefaults standardUserDefaults] setInteger:_inCount forKey:InCount];
+//                            [[NSUserDefaults standardUserDefaults] synchronize];
+////                            [_overVc showWinImageView];
+//                        } else {
+//                            if (max <= _inCount) {
+////                                // 比已经保存的值大就覆盖保存
+////                                [[NSUserDefaults standardUserDefaults] setInteger:_inCount forKey:InCount];
+////                                [[NSUserDefaults standardUserDefaults] synchronize];
+////                                [_overVc showWinImageView];
+//                            } else {
+//                                // 否则就不保存
+////                                [_overVc showLoseImageView];
+//                            }
+//                        }
+                        
                         // 跳转到over页面
-                        self.modalPresentationStyle = UIModalPresentationCustom;
-                        [self presentViewController:_overVc animated:NO completion:nil];
+                        OverViewController * overVc  = [[OverViewController alloc]init];
+                        overVc.score = _inCount;
+                        overVc.block = ^{
+                            _inCount = 0;
+                            _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+                        };
+                        overVc.modalPresentationStyle = UIModalPresentationCustom;
+                        [self presentViewController:overVc animated:NO completion:nil];
                     });
                 }];
                 

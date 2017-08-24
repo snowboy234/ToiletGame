@@ -30,6 +30,8 @@
 		FF41D5B21F4E9DEA00AC386B /* WomanToukanImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5B11F4E9DEA00AC386B /* WomanToukanImageView.m */; };
 		FF41D5B61F4EA1E400AC386B /* OverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5B41F4EA1E400AC386B /* OverViewController.m */; };
 		FF41D5B71F4EA1E400AC386B /* OverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF41D5B51F4EA1E400AC386B /* OverViewController.xib */; };
+		FF41D5BA1F4EB45B00AC386B /* WinImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5B91F4EB45B00AC386B /* WinImageView.m */; };
+		FF41D5BD1F4EB5B800AC386B /* LoseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5BC1F4EB5B800AC386B /* LoseImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,10 @@
 		FF41D5B31F4EA1E400AC386B /* OverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewController.h; sourceTree = "<group>"; };
 		FF41D5B41F4EA1E400AC386B /* OverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverViewController.m; sourceTree = "<group>"; };
 		FF41D5B51F4EA1E400AC386B /* OverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverViewController.xib; sourceTree = "<group>"; };
+		FF41D5B81F4EB45B00AC386B /* WinImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinImageView.h; sourceTree = "<group>"; };
+		FF41D5B91F4EB45B00AC386B /* WinImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinImageView.m; sourceTree = "<group>"; };
+		FF41D5BB1F4EB5B800AC386B /* LoseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoseImageView.h; sourceTree = "<group>"; };
+		FF41D5BC1F4EB5B800AC386B /* LoseImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoseImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,10 @@
 				FF41D5AE1F4E9DDD00AC386B /* ManToukanImageView.m */,
 				FF41D5B01F4E9DEA00AC386B /* WomanToukanImageView.h */,
 				FF41D5B11F4E9DEA00AC386B /* WomanToukanImageView.m */,
+				FF41D5B81F4EB45B00AC386B /* WinImageView.h */,
+				FF41D5B91F4EB45B00AC386B /* WinImageView.m */,
+				FF41D5BB1F4EB5B800AC386B /* LoseImageView.h */,
+				FF41D5BC1F4EB5B800AC386B /* LoseImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,7 +308,9 @@
 				FF41D5A31F4E661200AC386B /* WomanDoor.m in Sources */,
 				FF41D5981F4E5AEC00AC386B /* WomanImageView.m in Sources */,
 				FF41D5AF1F4E9DDD00AC386B /* ManToukanImageView.m in Sources */,
+				FF41D5BA1F4EB45B00AC386B /* WinImageView.m in Sources */,
 				FF41D42F1F4A748900AC386B /* main.m in Sources */,
+				FF41D5BD1F4EB5B800AC386B /* LoseImageView.m in Sources */,
 				FF41D58C1F4E5A6800AC386B /* PersonView.m in Sources */,
 				FF41D5A91F4E860000AC386B /* WomanOutImageView.m in Sources */,
 				FF41D44A1F4A75B100AC386B /* HomeViewController.m in Sources */,

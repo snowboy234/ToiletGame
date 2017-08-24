@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OverViewController : UIViewController
+typedef void(^sendBlock)();
 
+@interface OverViewController : UIViewController
+@property (nonatomic, copy) sendBlock block;
+@property (nonatomic, assign) NSInteger score;
 @end
