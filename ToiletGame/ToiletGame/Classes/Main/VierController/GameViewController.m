@@ -7,8 +7,12 @@
 //
 
 #import "GameViewController.h"
+#import "ManImageView.h"
+#import "WomanImageView.h"
 
 @interface GameViewController ()
+
+
 
 @end
 
@@ -18,22 +22,15 @@
     [super viewDidLoad];
     [self setupBgView];
     
-    
-    
-    
 }
-
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 
 - (void)setupBgView{
     UIImageView * bgImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
     bgImageView.image = [UIImage imageNamed:@"gamebg"];
     [self.view addSubview:bgImageView];
 }
+
+
+
 
 @end

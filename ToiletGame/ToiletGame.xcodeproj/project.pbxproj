@@ -17,6 +17,8 @@
 		FF41D45A1F4AAC1400AC386B /* 22203.TTF in Resources */ = {isa = PBXBuildFile; fileRef = FF41D4591F4AAC1400AC386B /* 22203.TTF */; };
 		FF41D45D1F4ABDA200AC386B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D45C1F4ABDA200AC386B /* GameViewController.m */; };
 		FF41D4601F4ACE5100AC386B /* HomeToGameAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D45F1F4ACE5100AC386B /* HomeToGameAnimation.m */; };
+		FF41D5861F4E592400AC386B /* ManImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5851F4E592400AC386B /* ManImageView.m */; };
+		FF41D5891F4E59BE00AC386B /* WomanImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5881F4E59BE00AC386B /* WomanImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		FF41D45C1F4ABDA200AC386B /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		FF41D45E1F4ACE5100AC386B /* HomeToGameAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeToGameAnimation.h; sourceTree = "<group>"; };
 		FF41D45F1F4ACE5100AC386B /* HomeToGameAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeToGameAnimation.m; sourceTree = "<group>"; };
+		FF41D5841F4E592400AC386B /* ManImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManImageView.h; sourceTree = "<group>"; };
+		FF41D5851F4E592400AC386B /* ManImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManImageView.m; sourceTree = "<group>"; };
+		FF41D5871F4E59BE00AC386B /* WomanImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WomanImageView.h; sourceTree = "<group>"; };
+		FF41D5881F4E59BE00AC386B /* WomanImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WomanImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		FF41D4461F4A759500AC386B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FF41D5831F4E591300AC386B /* View */,
 				FF41D4471F4A759500AC386B /* VierController */,
 			);
 			path = Main;
@@ -139,6 +146,17 @@
 				FF41D44F1F4A763A00AC386B /* UIView+TWFrame.m */,
 			);
 			path = Catagroy;
+			sourceTree = "<group>";
+		};
+		FF41D5831F4E591300AC386B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF41D5841F4E592400AC386B /* ManImageView.h */,
+				FF41D5851F4E592400AC386B /* ManImageView.m */,
+				FF41D5871F4E59BE00AC386B /* WomanImageView.h */,
+				FF41D5881F4E59BE00AC386B /* WomanImageView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,9 +235,11 @@
 				FF41D45D1F4ABDA200AC386B /* GameViewController.m in Sources */,
 				FF41D4321F4A748900AC386B /* AppDelegate.m in Sources */,
 				FF41D4601F4ACE5100AC386B /* HomeToGameAnimation.m in Sources */,
+				FF41D5891F4E59BE00AC386B /* WomanImageView.m in Sources */,
 				FF41D4521F4A763A00AC386B /* UIView+TWFrame.m in Sources */,
 				FF41D42F1F4A748900AC386B /* main.m in Sources */,
 				FF41D44A1F4A75B100AC386B /* HomeViewController.m in Sources */,
+				FF41D5861F4E592400AC386B /* ManImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +392,7 @@
 				FF41D4431F4A748900AC386B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
