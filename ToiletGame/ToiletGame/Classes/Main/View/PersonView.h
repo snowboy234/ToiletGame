@@ -1,5 +1,5 @@
 //
-//  GameViewController.h
+//  PersonView.h
 //  ToiletGame
 //
 //  Created by 田伟 on 2017/8/24.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
+@interface PersonView : UIImageView
+
+@property (nonatomic, copy) NSString * sex;
+
+@property (nonatomic, assign) NSInteger numid;
 
 @end

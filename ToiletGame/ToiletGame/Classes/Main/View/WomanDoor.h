@@ -1,5 +1,5 @@
 //
-//  GameViewController.h
+//  WomanDoor.h
 //  ToiletGame
 //
 //  Created by 田伟 on 2017/8/24.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
+@interface WomanDoor : UIImageView
+
+- (void)beginAnimation;
+- (void)endAnimation;
 
 @end

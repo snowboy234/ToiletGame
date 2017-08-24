@@ -6,10 +6,8 @@
 //  Copyright © 2017年 田伟. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PersonView.h"
 
-@interface ManImageView : UIImageView
-
-@property (nonatomic,copy) NSString * sex;
+@interface ManImageView : PersonView
 
 @end
