@@ -11,11 +11,16 @@
 #import "WomanImageView.h"
 #import "ManDoor.h"
 #import "WomanDoor.h"
-
+#import "ManOutImageView.h"
+#import "WomanOutImageView.h"
+#import "TWStrokeLabel.h"
+#import "ManToukanImageView.h"
+#import "WomanToukanImageView.h"
+#import "OverViewController.h"
 
 @interface GameViewController ()
 @property (weak, nonatomic) IBOutlet UIView *toolView;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet TWStrokeLabel *scoreLabel;
 - (IBAction)leftTapClick:(UIButton *)sender;
 - (IBAction)rightTapClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIView *niaojiRoadView;
@@ -32,6 +37,12 @@
 @property (nonatomic, strong) WomanImageView * woman3;
 @property (nonatomic, strong) WomanImageView * woman4;
 @property (nonatomic, strong) NSMutableDictionary * showDic;
+@property (nonatomic, strong) ManOutImageView * manOut;
+@property (nonatomic, strong) WomanOutImageView * womanOut;
+@property (nonatomic, assign) NSInteger inCount;
+@property (nonatomic, strong) ManToukanImageView * manToukan;
+@property (nonatomic, strong) WomanToukanImageView * womanToukan;
+@property (nonatomic, strong) OverViewController * overVc;
 @end
 
 @implementation GameViewController
@@ -41,7 +52,6 @@
 #define FourthY TWScreenHeight - 140 - ManHeight
 #define MoveTime 1.0
 
-// 总共8个
 - (NSMutableArray<PersonView *> *)niaojiArray{
     if (_niaojiArray == nil) {
         _niaojiArray = [NSMutableArray arrayWithObjects:_man1, _man2, _man3, _man4, _woman1, _woman2, _woman3, _woman4, nil];
@@ -54,15 +64,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initObject];
     [self setupPerson];
     [self chooesFourPerson];
 }
 
+- (void)initObject{
+    _inCount = 0;
+    _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+    _scoreLabel.font = TWTextFont1(50);
+    _scoreLabel.textColor = [UIColor colorWithRed:0.957f green:0.690f blue:0.243f alpha:1.00f];
+    CGFloat manOutWeight = _womanDoorImageView.tw_width;
+    CGFloat manOutHeight = _womanDoorImageView.tw_width * 127 / 143.0;
+    _manOut = [[ManOutImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(_womanDoorImageView.frame), CGRectGetMaxY(_womanDoorImageView.frame) - manOutHeight, manOutWeight, manOutHeight)];
+    
+    CGFloat womanOutWeight = _manDoorImageView.tw_width;
+    CGFloat womanOutHeight = _manDoorImageView.tw_width * 141 / 137.0;
+    _womanOut = [[WomanOutImageView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_manDoorImageView.frame) - womanOutWeight, CGRectGetMaxY(_manDoorImageView.frame) - womanOutHeight, womanOutWeight, womanOutHeight)];
+    
+    CGFloat manToukanWeight = TWScreenWidth * 0.75;
+    CGFloat manToukanHeight = 409.0 * manToukanWeight / 261.0;
+    CGFloat manToukanX = (TWScreenWidth - manToukanWeight) * 0.5;
+    CGFloat manToukanY = TWScreenHeight * (1 - 0.17) - manToukanHeight;
+    _manToukan = [[ManToukanImageView alloc]initWithFrame:CGRectMake(manToukanX, manToukanY, manToukanWeight, manToukanHeight)];
+    CGFloat womanToukanWeight = TWScreenWidth * 0.75;
+    CGFloat womanToukanHeight = 398.0 * womanToukanWeight / 244.0;
+    CGFloat womanToukanX = (TWScreenWidth - womanToukanWeight) * 0.5;
+    CGFloat womanToukanY = TWScreenHeight * (1 - 0.17) - womanToukanHeight;
+    _womanToukan = [[WomanToukanImageView alloc]initWithFrame:CGRectMake(womanToukanX, womanToukanY, womanToukanWeight, womanToukanHeight)];
+    _overVc  = [[OverViewController alloc]init];
+}
+
 // 随机4位
 - (void)chooesFourPerson{
-    
     _showDic = [NSMutableDictionary dictionaryWithCapacity:4];
-//    _showArray = [NSMutableArray arrayWithCapacity:4];
     NSMutableArray <PersonView * >* tempArr = [NSMutableArray arrayWithArray:self.niaojiArray];
     NSInteger num = 4;
     for (NSInteger i = 0; i < num; i++) {
@@ -124,6 +159,16 @@
     _woman4 = [[WomanImageView alloc]initWithFrame:CGRectMake(0, -ManHeight, ManWidth, ManHeight)];
 }
 
+// 随机取出另一个人物（不能重复）
+- (PersonView *)randomOnePersonNotincluded:(NSMutableDictionary *)dict{
+    NSMutableArray * temp = [NSMutableArray arrayWithArray:_niaojiArray];
+    for (NSInteger i = 0; i < dict.count; i++) {
+        [temp removeObject:[dict objectForKey:[NSString stringWithFormat:@"%ld",i]]];
+    }
+    NSInteger t = arc4random() % temp.count;
+    return temp[t];
+}
+
 - (IBAction)leftTapClick:(UIButton *)sender {
     // 增加一个
     PersonView * newPerson = [self randomOnePersonNotincluded:_showDic];
@@ -137,6 +182,25 @@
     [UIView animateWithDuration:MoveTime / 5 animations:^{
         zore.tw_x = -TWScreenWidth * 0.25;
     } completion:^(BOOL finished) {
+        [_manDoorImageView beginAnimation];
+        if ([zore.sex isEqualToString: @"Man"]) {
+            _inCount ++;
+            _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+        } else {
+            [self.view addSubview:_womanOut];
+            [UIView animateWithDuration:MoveTime / 5 animations:^{
+                _womanOut.tw_centerX = _niaojiRoadView.tw_centerX;
+            } completion:^(BOOL finished) {
+                [_womanOut removeFromSuperview];
+                [self.view addSubview:_womanToukan];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [_womanToukan removeFromSuperview];
+                    // 跳转到over页面
+                    self.modalPresentationStyle = UIModalPresentationCustom;
+                    [self presentViewController:_overVc animated:NO completion:nil];
+                });
+            }];
+        }
         [zore removeFromSuperview];
         [_showDic removeObjectForKey:@"0"];
         
@@ -164,16 +228,6 @@
     }];
 }
 
-// 随机取出另一个人物（不能重复）
-- (PersonView *)randomOnePersonNotincluded:(NSMutableDictionary *)dict{
-    NSMutableArray * temp = [NSMutableArray arrayWithArray:_niaojiArray];
-    for (NSInteger i = 0; i < dict.count; i++) {
-        [temp removeObject:[dict objectForKey:[NSString stringWithFormat:@"%ld",i]]];
-    }
-    NSInteger t = arc4random() % temp.count;
-    return temp[t];
-}
-
 - (IBAction)rightTapClick:(UIButton *)sender {
     // 增加一个
     PersonView * newPerson = [self randomOnePersonNotincluded:_showDic];
@@ -187,6 +241,30 @@
     [UIView animateWithDuration:MoveTime / 5 animations:^{
         zore.tw_x = TWScreenWidth * 0.25;
     } completion:^(BOOL finished) {
+        
+        [_womanDoorImageView beginAnimation];
+        if ([zore.sex isEqualToString: @"Woman"]) {
+            _inCount ++;
+            _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+        } else {
+            [self.view addSubview:_manOut];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                _manOut.image = [UIImage imageNamed:@"man_out2"];
+                [UIView animateWithDuration:MoveTime / 5 animations:^{
+                    _manOut.tw_centerX = _niaojiRoadView.tw_centerX;
+                } completion:^(BOOL finished) {
+                    [_manOut removeFromSuperview];
+                    [self.view addSubview:_manToukan];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [_manToukan removeFromSuperview];
+                        // 跳转到over页面
+                        self.modalPresentationStyle = UIModalPresentationCustom;
+                        [self presentViewController:_overVc animated:NO completion:nil];
+                    });
+                }];
+                
+            });
+        }
         [zore removeFromSuperview];
         [_showDic removeObjectForKey:@"0"];
         
@@ -197,7 +275,7 @@
         [temp setObject:three forKey:@"2"];
         [_showDic removeAllObjects];
         _showDic = temp;
-
+        
         [UIView animateWithDuration:MoveTime / 5 animations:^{
             three.tw_y = FourthY - ManHeight;
             second.tw_y = FourthY - ManHeight / 2;

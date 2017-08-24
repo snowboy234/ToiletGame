@@ -23,6 +23,13 @@
 		FF41D59D1F4E5E0200AC386B /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF41D59B1F4E5E0200AC386B /* GameViewController.xib */; };
 		FF41D5A01F4E65FC00AC386B /* ManDoor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D59F1F4E65FC00AC386B /* ManDoor.m */; };
 		FF41D5A31F4E661200AC386B /* WomanDoor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5A21F4E661200AC386B /* WomanDoor.m */; };
+		FF41D5A61F4E85F000AC386B /* ManOutImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5A51F4E85F000AC386B /* ManOutImageView.m */; };
+		FF41D5A91F4E860000AC386B /* WomanOutImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5A81F4E860000AC386B /* WomanOutImageView.m */; };
+		FF41D5AC1F4E8CEC00AC386B /* TWStrokeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5AB1F4E8CEC00AC386B /* TWStrokeLabel.m */; };
+		FF41D5AF1F4E9DDD00AC386B /* ManToukanImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5AE1F4E9DDD00AC386B /* ManToukanImageView.m */; };
+		FF41D5B21F4E9DEA00AC386B /* WomanToukanImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5B11F4E9DEA00AC386B /* WomanToukanImageView.m */; };
+		FF41D5B61F4EA1E400AC386B /* OverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5B41F4EA1E400AC386B /* OverViewController.m */; };
+		FF41D5B71F4EA1E400AC386B /* OverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF41D5B51F4EA1E400AC386B /* OverViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +63,19 @@
 		FF41D59F1F4E65FC00AC386B /* ManDoor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManDoor.m; sourceTree = "<group>"; };
 		FF41D5A11F4E661200AC386B /* WomanDoor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WomanDoor.h; sourceTree = "<group>"; };
 		FF41D5A21F4E661200AC386B /* WomanDoor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WomanDoor.m; sourceTree = "<group>"; };
+		FF41D5A41F4E85F000AC386B /* ManOutImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManOutImageView.h; sourceTree = "<group>"; };
+		FF41D5A51F4E85F000AC386B /* ManOutImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManOutImageView.m; sourceTree = "<group>"; };
+		FF41D5A71F4E860000AC386B /* WomanOutImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WomanOutImageView.h; sourceTree = "<group>"; };
+		FF41D5A81F4E860000AC386B /* WomanOutImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WomanOutImageView.m; sourceTree = "<group>"; };
+		FF41D5AA1F4E8CEC00AC386B /* TWStrokeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWStrokeLabel.h; sourceTree = "<group>"; };
+		FF41D5AB1F4E8CEC00AC386B /* TWStrokeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWStrokeLabel.m; sourceTree = "<group>"; };
+		FF41D5AD1F4E9DDD00AC386B /* ManToukanImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManToukanImageView.h; sourceTree = "<group>"; };
+		FF41D5AE1F4E9DDD00AC386B /* ManToukanImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManToukanImageView.m; sourceTree = "<group>"; };
+		FF41D5B01F4E9DEA00AC386B /* WomanToukanImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WomanToukanImageView.h; sourceTree = "<group>"; };
+		FF41D5B11F4E9DEA00AC386B /* WomanToukanImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WomanToukanImageView.m; sourceTree = "<group>"; };
+		FF41D5B31F4EA1E400AC386B /* OverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewController.h; sourceTree = "<group>"; };
+		FF41D5B41F4EA1E400AC386B /* OverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverViewController.m; sourceTree = "<group>"; };
+		FF41D5B51F4EA1E400AC386B /* OverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +156,9 @@
 				FF41D5991F4E5E0200AC386B /* GameViewController.h */,
 				FF41D59A1F4E5E0200AC386B /* GameViewController.m */,
 				FF41D59B1F4E5E0200AC386B /* GameViewController.xib */,
+				FF41D5B31F4EA1E400AC386B /* OverViewController.h */,
+				FF41D5B41F4EA1E400AC386B /* OverViewController.m */,
+				FF41D5B51F4EA1E400AC386B /* OverViewController.xib */,
 			);
 			path = VierController;
 			sourceTree = "<group>";
@@ -163,6 +186,8 @@
 		FF41D5831F4E591300AC386B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF41D5AA1F4E8CEC00AC386B /* TWStrokeLabel.h */,
+				FF41D5AB1F4E8CEC00AC386B /* TWStrokeLabel.m */,
 				FF41D58A1F4E5A6800AC386B /* PersonView.h */,
 				FF41D58B1F4E5A6800AC386B /* PersonView.m */,
 				FF41D5931F4E5AC900AC386B /* ManImageView.h */,
@@ -173,6 +198,14 @@
 				FF41D59F1F4E65FC00AC386B /* ManDoor.m */,
 				FF41D5A11F4E661200AC386B /* WomanDoor.h */,
 				FF41D5A21F4E661200AC386B /* WomanDoor.m */,
+				FF41D5A41F4E85F000AC386B /* ManOutImageView.h */,
+				FF41D5A51F4E85F000AC386B /* ManOutImageView.m */,
+				FF41D5A71F4E860000AC386B /* WomanOutImageView.h */,
+				FF41D5A81F4E860000AC386B /* WomanOutImageView.m */,
+				FF41D5AD1F4E9DDD00AC386B /* ManToukanImageView.h */,
+				FF41D5AE1F4E9DDD00AC386B /* ManToukanImageView.m */,
+				FF41D5B01F4E9DEA00AC386B /* WomanToukanImageView.h */,
+				FF41D5B11F4E9DEA00AC386B /* WomanToukanImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +271,7 @@
 			files = (
 				FF41D43D1F4A748900AC386B /* LaunchScreen.storyboard in Resources */,
 				FF41D43A1F4A748900AC386B /* Assets.xcassets in Resources */,
+				FF41D5B71F4EA1E400AC386B /* OverViewController.xib in Resources */,
 				FF41D45A1F4AAC1400AC386B /* 22203.TTF in Resources */,
 				FF41D4581F4AA7AF00AC386B /* 2203.TTF in Resources */,
 				FF41D59D1F4E5E0200AC386B /* GameViewController.xib in Resources */,
@@ -254,13 +288,19 @@
 				FF41D4321F4A748900AC386B /* AppDelegate.m in Sources */,
 				FF41D4601F4ACE5100AC386B /* HomeToGameAnimation.m in Sources */,
 				FF41D5A01F4E65FC00AC386B /* ManDoor.m in Sources */,
+				FF41D5B21F4E9DEA00AC386B /* WomanToukanImageView.m in Sources */,
 				FF41D4521F4A763A00AC386B /* UIView+TWFrame.m in Sources */,
 				FF41D5951F4E5AC900AC386B /* ManImageView.m in Sources */,
+				FF41D5AC1F4E8CEC00AC386B /* TWStrokeLabel.m in Sources */,
+				FF41D5B61F4EA1E400AC386B /* OverViewController.m in Sources */,
 				FF41D59C1F4E5E0200AC386B /* GameViewController.m in Sources */,
+				FF41D5A61F4E85F000AC386B /* ManOutImageView.m in Sources */,
 				FF41D5A31F4E661200AC386B /* WomanDoor.m in Sources */,
 				FF41D5981F4E5AEC00AC386B /* WomanImageView.m in Sources */,
+				FF41D5AF1F4E9DDD00AC386B /* ManToukanImageView.m in Sources */,
 				FF41D42F1F4A748900AC386B /* main.m in Sources */,
 				FF41D58C1F4E5A6800AC386B /* PersonView.m in Sources */,
+				FF41D5A91F4E860000AC386B /* WomanOutImageView.m in Sources */,
 				FF41D44A1F4A75B100AC386B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

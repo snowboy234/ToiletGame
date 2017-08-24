@@ -31,7 +31,8 @@
                                  [UIImage imageNamed:@"man_door4"],
                                  [UIImage imageNamed:@"man_door5"]
                                  ];
-        self.animationDuration = 0.5;
+        self.animationDuration = 1.0;
+        self.animationRepeatCount = 1;
     }
     return self;
 }
