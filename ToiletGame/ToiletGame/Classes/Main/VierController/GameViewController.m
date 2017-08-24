@@ -44,6 +44,10 @@
 @property (nonatomic, strong) WomanToukanImageView * womanToukan;
 //@property (nonatomic, strong) OverViewController * overVc;
 @property (nonatomic, strong) UIView * cover;
+@property (weak, nonatomic) IBOutlet UIImageView *progressBarImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarYCons;
+
+
 @end
 
 @implementation GameViewController
@@ -65,10 +69,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    TWLog(@"%@",NSHomeDirectory());
     [self initObject];
     [self setupPerson];
     [self chooesFourPerson];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.progressBarYCons.constant = TWScreenWidth;
+    [UIView animateWithDuration:5 animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (void)initObject{

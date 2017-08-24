@@ -15,6 +15,8 @@
             <connections>
                 <outlet property="manDoorImageView" destination="hgI-ey-Udf" id="vTg-b9-gRc"/>
                 <outlet property="niaojiRoadView" destination="vl4-Z5-caR" id="Rig-ae-cps"/>
+                <outlet property="progressBarImageView" destination="1cq-Nw-ZKh" id="iiF-LD-Tmh"/>
+                <outlet property="progressBarYCons" destination="yiT-JE-qi2" id="cPO-DU-ysU"/>
                 <outlet property="scoreLabel" destination="4e2-7e-Cf7" id="eK6-sG-pZl"/>
                 <outlet property="toolView" destination="rkv-7f-IX8" id="fVr-Zs-BDv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -93,7 +95,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="progressBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="myy-Af-4MC">
                     <rect key="frame" x="0.0" y="30" width="414" height="56"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="progressBar" translatesAutoresizingMaskIntoConstraints="NO" id="1cq-Nw-ZKh">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="progressBar" translatesAutoresizingMaskIntoConstraints="NO" id="1cq-Nw-ZKh">
                     <rect key="frame" x="0.0" y="30" width="414" height="56"/>
                 </imageView>
             </subviews>
@@ -101,12 +103,11 @@
             <constraints>
                 <constraint firstItem="vl4-Z5-caR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6LW-Ig-VxG"/>
                 <constraint firstItem="myy-Af-4MC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8qY-Da-rSH"/>
+                <constraint firstItem="1cq-Nw-ZKh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AKS-SX-KZC"/>
                 <constraint firstItem="rkv-7f-IX8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C6T-vY-Owg"/>
                 <constraint firstItem="ibw-vf-1MT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-20" id="IGi-XQ-ORP"/>
-                <constraint firstItem="1cq-Nw-ZKh" firstAttribute="trailing" secondItem="myy-Af-4MC" secondAttribute="trailing" id="KdX-WI-rvu"/>
                 <constraint firstItem="vl4-Z5-caR" firstAttribute="width" secondItem="ibw-vf-1MT" secondAttribute="width" multiplier="0.34" id="LBJ-vS-uyx"/>
                 <constraint firstItem="myy-Af-4MC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="LG7-Fc-phN"/>
-                <constraint firstItem="1cq-Nw-ZKh" firstAttribute="bottom" secondItem="myy-Af-4MC" secondAttribute="bottom" id="Mbj-UE-fOa"/>
                 <constraint firstAttribute="trailing" secondItem="rkv-7f-IX8" secondAttribute="trailing" id="PTp-Vf-Fbc"/>
                 <constraint firstItem="wrQ-Sv-72e" firstAttribute="leading" secondItem="vl4-Z5-caR" secondAttribute="trailing" constant="20" id="RzZ-R3-LOr"/>
                 <constraint firstItem="rkv-7f-IX8" firstAttribute="height" secondItem="ibw-vf-1MT" secondAttribute="height" multiplier="0.17" id="T9P-eM-Lnr"/>
@@ -114,18 +115,18 @@
                 <constraint firstAttribute="trailing" secondItem="myy-Af-4MC" secondAttribute="trailing" id="Vio-c9-0VY"/>
                 <constraint firstItem="ibw-vf-1MT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZO3-SK-6UD"/>
                 <constraint firstItem="hgI-ey-Udf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="aof-vQ-Dhe"/>
-                <constraint firstItem="1cq-Nw-ZKh" firstAttribute="top" secondItem="myy-Af-4MC" secondAttribute="top" id="d9Y-Ar-AGe"/>
                 <constraint firstAttribute="bottom" secondItem="ibw-vf-1MT" secondAttribute="bottom" id="dgo-DE-7wR"/>
-                <constraint firstItem="1cq-Nw-ZKh" firstAttribute="leading" secondItem="myy-Af-4MC" secondAttribute="leading" id="eWg-mH-SHe"/>
                 <constraint firstItem="vl4-Z5-caR" firstAttribute="leading" secondItem="hgI-ey-Udf" secondAttribute="trailing" constant="20" id="gYs-a5-0yE"/>
                 <constraint firstItem="rkv-7f-IX8" firstAttribute="top" secondItem="wrQ-Sv-72e" secondAttribute="bottom" constant="20" id="kZH-f3-jci"/>
                 <constraint firstItem="vl4-Z5-caR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kfF-ci-WdG"/>
+                <constraint firstItem="1cq-Nw-ZKh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="mBr-vS-i5s"/>
                 <constraint firstAttribute="trailing" secondItem="wrQ-Sv-72e" secondAttribute="trailing" constant="20" id="mkP-ZS-blL"/>
                 <constraint firstItem="rkv-7f-IX8" firstAttribute="top" secondItem="hgI-ey-Udf" secondAttribute="bottom" constant="20" id="uka-6F-Y4R"/>
                 <constraint firstAttribute="bottom" secondItem="rkv-7f-IX8" secondAttribute="bottom" id="uyi-j6-Eu5"/>
+                <constraint firstAttribute="trailing" secondItem="1cq-Nw-ZKh" secondAttribute="trailing" id="yiT-JE-qi2"/>
                 <constraint firstItem="rkv-7f-IX8" firstAttribute="top" secondItem="vl4-Z5-caR" secondAttribute="bottom" id="zeV-qo-zyu"/>
             </constraints>
-            <point key="canvasLocation" x="33" y="54"/>
+            <point key="canvasLocation" x="-39" y="55"/>
         </view>
     </objects>
     <resources>
