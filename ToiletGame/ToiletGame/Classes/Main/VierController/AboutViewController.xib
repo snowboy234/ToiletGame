@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="TDU-Hj-tc7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DE-zC-32I" customClass="TWStrokeLabel">
+                    <rect key="frame" x="161" y="565" width="52" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版权" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qex-D4-w2W" customClass="TWStrokeLabel">
+                    <rect key="frame" x="170" y="596" width="35" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="106 studio research and development" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc4-Ua-Lls" customClass="TWStrokeLabel">
+                    <rect key="frame" x="43" y="534.5" width="288" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qex-D4-w2W" secondAttribute="bottom" constant="50" id="5aq-t8-1vX"/>
+                <constraint firstItem="qex-D4-w2W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BS4-BE-5j5"/>
+                <constraint firstItem="TDU-Hj-tc7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bdt-Uk-jXX"/>
+                <constraint firstAttribute="trailing" secondItem="TDU-Hj-tc7" secondAttribute="trailing" id="GHu-l3-ov0"/>
+                <constraint firstItem="qex-D4-w2W" firstAttribute="top" secondItem="4DE-zC-32I" secondAttribute="bottom" constant="10" id="H0L-N7-QAw"/>
+                <constraint firstItem="TDU-Hj-tc7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="I7Y-bO-RSh"/>
+                <constraint firstItem="4DE-zC-32I" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="U9c-l1-H7v"/>
+                <constraint firstAttribute="bottom" secondItem="TDU-Hj-tc7" secondAttribute="bottom" id="Ulg-j2-iXZ"/>
+                <constraint firstItem="4DE-zC-32I" firstAttribute="top" secondItem="Oc4-Ua-Lls" secondAttribute="bottom" constant="10" id="egH-wT-WSd"/>
+                <constraint firstItem="Oc4-Ua-Lls" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="log-SM-zLe"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="162.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pic" width="1242" height="2208"/>
+    </resources>
+</document>

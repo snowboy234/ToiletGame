@@ -32,6 +32,9 @@
 		FF41D5B71F4EA1E400AC386B /* OverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF41D5B51F4EA1E400AC386B /* OverViewController.xib */; };
 		FF41D5BA1F4EB45B00AC386B /* WinImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5B91F4EB45B00AC386B /* WinImageView.m */; };
 		FF41D5BD1F4EB5B800AC386B /* LoseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5BC1F4EB5B800AC386B /* LoseImageView.m */; };
+		FF41D5C11F4FB3F700AC386B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5BF1F4FB3F700AC386B /* AboutViewController.m */; };
+		FF41D5C21F4FB3F700AC386B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF41D5C01F4FB3F700AC386B /* AboutViewController.xib */; };
+		FF41D5C51F4FB49900AC386B /* HomeToAboutAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF41D5C41F4FB49900AC386B /* HomeToAboutAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,11 @@
 		FF41D5B91F4EB45B00AC386B /* WinImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinImageView.m; sourceTree = "<group>"; };
 		FF41D5BB1F4EB5B800AC386B /* LoseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoseImageView.h; sourceTree = "<group>"; };
 		FF41D5BC1F4EB5B800AC386B /* LoseImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoseImageView.m; sourceTree = "<group>"; };
+		FF41D5BE1F4FB3F700AC386B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		FF41D5BF1F4FB3F700AC386B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		FF41D5C01F4FB3F700AC386B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		FF41D5C31F4FB49900AC386B /* HomeToAboutAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeToAboutAnimation.h; sourceTree = "<group>"; };
+		FF41D5C41F4FB49900AC386B /* HomeToAboutAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeToAboutAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,11 @@
 				FF41D5B31F4EA1E400AC386B /* OverViewController.h */,
 				FF41D5B41F4EA1E400AC386B /* OverViewController.m */,
 				FF41D5B51F4EA1E400AC386B /* OverViewController.xib */,
+				FF41D5BE1F4FB3F700AC386B /* AboutViewController.h */,
+				FF41D5BF1F4FB3F700AC386B /* AboutViewController.m */,
+				FF41D5C01F4FB3F700AC386B /* AboutViewController.xib */,
+				FF41D5C31F4FB49900AC386B /* HomeToAboutAnimation.h */,
+				FF41D5C41F4FB49900AC386B /* HomeToAboutAnimation.m */,
 			);
 			path = VierController;
 			sourceTree = "<group>";
@@ -280,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF41D43D1F4A748900AC386B /* LaunchScreen.storyboard in Resources */,
+				FF41D5C21F4FB3F700AC386B /* AboutViewController.xib in Resources */,
 				FF41D43A1F4A748900AC386B /* Assets.xcassets in Resources */,
 				FF41D5B71F4EA1E400AC386B /* OverViewController.xib in Resources */,
 				FF41D45A1F4AAC1400AC386B /* 22203.TTF in Resources */,
@@ -301,6 +315,8 @@
 				FF41D5B21F4E9DEA00AC386B /* WomanToukanImageView.m in Sources */,
 				FF41D4521F4A763A00AC386B /* UIView+TWFrame.m in Sources */,
 				FF41D5951F4E5AC900AC386B /* ManImageView.m in Sources */,
+				FF41D5C11F4FB3F700AC386B /* AboutViewController.m in Sources */,
+				FF41D5C51F4FB49900AC386B /* HomeToAboutAnimation.m in Sources */,
 				FF41D5AC1F4E8CEC00AC386B /* TWStrokeLabel.m in Sources */,
 				FF41D5B61F4EA1E400AC386B /* OverViewController.m in Sources */,
 				FF41D59C1F4E5E0200AC386B /* GameViewController.m in Sources */,

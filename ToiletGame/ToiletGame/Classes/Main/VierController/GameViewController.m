@@ -42,12 +42,14 @@
 @property (nonatomic, assign) NSInteger inCount;
 @property (nonatomic, strong) ManToukanImageView * manToukan;
 @property (nonatomic, strong) WomanToukanImageView * womanToukan;
-//@property (nonatomic, strong) OverViewController * overVc;
 @property (nonatomic, strong) UIView * cover;
 @property (weak, nonatomic) IBOutlet UIImageView *progressBarImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarYCons;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarMaginRCons;
 
 
+@property (nonatomic, assign) CGFloat second;
+@property (nonatomic, strong) NSTimer * myTimer;
 @end
 
 @implementation GameViewController
@@ -56,6 +58,7 @@
 #define ManHeight 266.0 * ManWidth / 180.0
 #define FourthY TWScreenHeight - 140 - ManHeight
 #define MoveTime 1.0
+#define time 10
 
 - (NSMutableArray<PersonView *> *)niaojiArray{
     if (_niaojiArray == nil) {
@@ -76,15 +79,51 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    self.progressBarYCons.constant = TWScreenWidth;
-    [UIView animateWithDuration:5 animations:^{
+//    [self TurnOnTiming];
+}
+
+// 开启定时器
+- (void)TurnOnTiming{
+    self.progressBarYCons.constant = TWScreenWidth - 5;
+    [UIView animateWithDuration:time animations:^{
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
-        
+        [self gameOver];
     }];
 }
 
+// 游戏结束
+- (void)gameOver{
+    OverViewController * overVc  = [[OverViewController alloc]init];
+    overVc.score = _inCount;
+    overVc.block = ^{
+        _inCount = 0;
+        _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+        [self resetProgressBar];
+    };
+    overVc.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:overVc animated:NO completion:nil];
+}
+
+// 重设定时器
+- (void)resetProgressBar{
+//    _progressBarImageView.tw_width = TWScreenWidth - 5;
+    _progressBarMaginRCons.constant = 5;
+    [_myTimer setFireDate:[NSDate distantPast]];//运行
+}
+
+- (void)moveProgressBar{
+//    _progressBarImageView.tw_width -= 1;
+    _progressBarMaginRCons.constant++;
+    _progressBarImageView.tw_width--;
+    if (_progressBarImageView.tw_width == 0) {
+        [_myTimer setFireDate:[NSDate distantFuture]];//停止
+        [self gameOver];
+    }
+}
+
 - (void)initObject{
+    _myTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveProgressBar) userInfo:nil repeats:YES];
     _inCount = 0;
     _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
     _scoreLabel.font = TWTextFont1(50);
@@ -107,7 +146,6 @@
     CGFloat womanToukanX = (TWScreenWidth - womanToukanWeight) * 0.5;
     CGFloat womanToukanY = TWScreenHeight * (1 - 0.17) - womanToukanHeight;
     _womanToukan = [[WomanToukanImageView alloc]initWithFrame:CGRectMake(womanToukanX, womanToukanY, womanToukanWeight, womanToukanHeight)];
-//    _overVc  = [[OverViewController alloc]init];
     _cover = [[UIView alloc]initWithFrame:self.view.bounds];
 }
 
@@ -186,6 +224,10 @@
 }
 
 - (IBAction)leftTapClick:(UIButton *)sender {
+    
+//    TWLog(@"%@",NSStringFromCGRect(_progressBarImageView.frame));
+    
+    
     // 增加一个
     PersonView * newPerson = [self randomOnePersonNotincluded:_showDic];
     
@@ -204,6 +246,11 @@
             _inCount ++;
             _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
             [_cover removeFromSuperview];
+            
+            
+//            TWLog(@"%@",NSStringFromCGRect(_progressBarImageView.frame));
+            
+            
         } else {
             [self.view addSubview:_womanOut];
             [UIView animateWithDuration:MoveTime / 5 animations:^{
@@ -234,15 +281,17 @@
 //                        }
 //                    }
                     
-                    // 跳转到over页面
-                    OverViewController * overVc  = [[OverViewController alloc]init];
-                    overVc.score = _inCount;
-                    overVc.block = ^{
-                        _inCount = 0;
-                        _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
-                    };
-                    overVc.modalPresentationStyle = UIModalPresentationCustom;
-                    [self presentViewController:overVc animated:NO completion:nil];
+//                    // 跳转到over页面
+//                    OverViewController * overVc  = [[OverViewController alloc]init];
+//                    overVc.score = _inCount;
+//                    overVc.block = ^{
+//                        _inCount = 0;
+//                        _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+//                    };
+//                    overVc.modalPresentationStyle = UIModalPresentationCustom;
+//                    [self presentViewController:overVc animated:NO completion:nil];
+                    [_myTimer setFireDate:[NSDate distantFuture]];//停止
+                    [self gameOver];
                 });
             }];
         }
@@ -325,14 +374,16 @@
 //                        }
                         
                         // 跳转到over页面
-                        OverViewController * overVc  = [[OverViewController alloc]init];
-                        overVc.score = _inCount;
-                        overVc.block = ^{
-                            _inCount = 0;
-                            _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
-                        };
-                        overVc.modalPresentationStyle = UIModalPresentationCustom;
-                        [self presentViewController:overVc animated:NO completion:nil];
+//                        OverViewController * overVc  = [[OverViewController alloc]init];
+//                        overVc.score = _inCount;
+//                        overVc.block = ^{
+//                            _inCount = 0;
+//                            _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
+//                        };
+//                        overVc.modalPresentationStyle = UIModalPresentationCustom;
+//                        [self presentViewController:overVc animated:NO completion:nil];
+                        [_myTimer setFireDate:[NSDate distantFuture]];//停止
+                        [self gameOver];
                     });
                 }];
                 
