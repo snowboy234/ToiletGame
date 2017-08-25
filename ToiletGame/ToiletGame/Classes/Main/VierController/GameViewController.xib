@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController">
             <connections>
+                <outlet property="backButton" destination="kqP-1Y-J10" id="xOm-LN-BDV"/>
                 <outlet property="manDoorImageView" destination="hgI-ey-Udf" id="vTg-b9-gRc"/>
                 <outlet property="niaojiRoadView" destination="vl4-Z5-caR" id="Rig-ae-cps"/>
                 <outlet property="progressBarImageView" destination="1cq-Nw-ZKh" id="iiF-LD-Tmh"/>
@@ -99,9 +100,17 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="progressBar1" translatesAutoresizingMaskIntoConstraints="NO" id="1cq-Nw-ZKh">
                     <rect key="frame" x="5" y="33" width="404" height="56"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqP-1Y-J10">
+                    <rect key="frame" x="10" y="99" width="50" height="50"/>
+                    <state key="normal" image="Back"/>
+                    <connections>
+                        <action selector="backButtonClick:" destination="-1" eventType="touchUpInside" id="KlG-ej-85o"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="kqP-1Y-J10" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="2O3-4b-f6F"/>
                 <constraint firstItem="vl4-Z5-caR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6LW-Ig-VxG"/>
                 <constraint firstItem="myy-Af-4MC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8qY-Da-rSH"/>
                 <constraint firstItem="1cq-Nw-ZKh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="AKS-SX-KZC"/>
@@ -114,6 +123,7 @@
                 <constraint firstItem="rkv-7f-IX8" firstAttribute="height" secondItem="ibw-vf-1MT" secondAttribute="height" multiplier="0.17" id="T9P-eM-Lnr"/>
                 <constraint firstAttribute="trailing" secondItem="ibw-vf-1MT" secondAttribute="trailing" id="Ukc-xd-Iex"/>
                 <constraint firstAttribute="trailing" secondItem="myy-Af-4MC" secondAttribute="trailing" id="Vio-c9-0VY"/>
+                <constraint firstItem="kqP-1Y-J10" firstAttribute="top" secondItem="1cq-Nw-ZKh" secondAttribute="bottom" constant="10" id="ZAM-us-nS3"/>
                 <constraint firstItem="ibw-vf-1MT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZO3-SK-6UD"/>
                 <constraint firstItem="hgI-ey-Udf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="aof-vQ-Dhe"/>
                 <constraint firstAttribute="bottom" secondItem="ibw-vf-1MT" secondAttribute="bottom" id="dgo-DE-7wR"/>
@@ -131,6 +141,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Back" width="50" height="50"/>
         <image name="gamebg" width="320" height="568"/>
         <image name="man_door1" width="94" height="173"/>
         <image name="man_tap" width="161" height="115"/>

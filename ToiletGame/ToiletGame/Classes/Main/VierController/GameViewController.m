@@ -48,8 +48,10 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarMaginRCons;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (nonatomic, assign) CGFloat second;
 @property (nonatomic, strong) NSTimer * myTimer;
+- (IBAction)backButtonClick:(UIButton *)sender;
 @end
 
 @implementation GameViewController
@@ -123,7 +125,13 @@
 }
 
 - (void)initObject{
-    _myTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveProgressBar) userInfo:nil repeats:YES];
+    _backButton.layer.cornerRadius = 5;
+    _backButton.layer.masksToBounds = YES;
+    _backButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    _backButton.layer.borderWidth = 2;
+    
+    _myTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveProgressBar) userInfo:nil repeats:YES];
+    
     _inCount = 0;
     _scoreLabel.text = [NSString stringWithFormat:@"%ld",_inCount];
     _scoreLabel.font = TWTextFont1(50);
@@ -415,5 +423,9 @@
             newPerson.tw_y = FourthY - ManHeight * 1.5;
         }];
     }];
+}
+
+- (IBAction)backButtonClick:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
